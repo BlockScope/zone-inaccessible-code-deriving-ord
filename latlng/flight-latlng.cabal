@@ -1,0 +1,70 @@
+-- This file has been generated from package.dhall by hpack version 0.25.0.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: 1f6ffae268457ed15437382cd0b12d11cc24f7db0075a8078eb42f75e6424e2f
+
+name:           flight-latlng
+version:        0.1.0
+synopsis:       Latitude and longitude as used in hang gliding and paragliding competitions.
+description:    Latitude and longitude.
+category:       Flight
+homepage:       https://github.com/blockscope/flare-timing#readme
+bug-reports:    https://github.com/blockscope/flare-timing/issues
+author:         Phil de Joux
+maintainer:     phil.dejoux@blockscope.com
+copyright:      © 2017-2018 Phil de Joux, © 2017-2018 Block Scope Limited
+license:        MPL-2.0
+license-file:   LICENSE.md
+tested-with:    GHC == 8.2.2
+build-type:     Simple
+cabal-version:  >= 1.10
+
+extra-source-files:
+    changelog.md
+    package.dhall
+    README.md
+
+source-repository head
+  type: git
+  location: https://github.com/blockscope/flare-timing
+  subdir: latlng
+
+library
+  exposed-modules:
+      Flight.Field
+      Flight.EastNorth
+      Flight.LatLng
+      Flight.LatLng.Raw
+      Flight.LatLng.Double
+      Flight.LatLng.Float
+      Flight.LatLng.Rational
+      Flight.Distance
+  other-modules:
+      Flight.LatLng.Family
+      Flight.LatLng.Lat
+      Flight.LatLng.Lng
+      Paths_flight_latlng
+  hs-source-dirs:
+      library
+  default-extensions: DataKinds DeriveFunctor DeriveGeneric DeriveAnyClass DerivingStrategies DisambiguateRecordFields FlexibleContexts FlexibleInstances GeneralizedNewtypeDeriving GADTs LambdaCase MultiParamTypeClasses MultiWayIf NamedFieldPuns OverloadedStrings PackageImports ParallelListComp PartialTypeSignatures PatternSynonyms QuasiQuotes RankNTypes RecordWildCards ScopedTypeVariables StandaloneDeriving TemplateHaskell TypeApplications TypeFamilies TypeOperators TypeSynonymInstances TupleSections UndecidableInstances
+  ghc-options: -Wall -fplugin Data.UnitsOfMeasure.Plugin
+  build-depends:
+      aeson
+    , base >=4.9.1.0
+    , bifunctors
+    , bytestring
+    , cassava
+    , detour-via-sci
+    , detour-via-uom
+    , flight-units
+    , formatting
+    , newtype
+    , numbers
+    , random
+    , siggy-chardust
+    , smallcheck
+    , tasty-quickcheck
+    , text
+    , uom-plugin
+  default-language: Haskell2010

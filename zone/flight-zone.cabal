@@ -1,0 +1,64 @@
+-- This file has been generated from package.dhall by hpack version 0.25.0.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: b98efe78d3e1a223ea6847cc59af58fad0a179ed329cf385364621a8bf430271
+
+name:           flight-zone
+version:        0.1.0
+synopsis:       Control zones to fly.
+description:    Control zones for hang gliding and paragliding competitons.
+category:       Flight
+homepage:       https://github.com/blockscope/flare-timing#readme
+bug-reports:    https://github.com/blockscope/flare-timing/issues
+author:         Phil de Joux
+maintainer:     phil.dejoux@blockscope.com
+copyright:      © 2017-2018 Phil de Joux, © 2017-2018 Block Scope Limited
+license:        MPL-2.0
+license-file:   LICENSE.md
+tested-with:    GHC == 8.2.2
+build-type:     Simple
+cabal-version:  >= 1.10
+
+extra-source-files:
+    changelog.md
+    package.dhall
+    README.md
+
+source-repository head
+  type: git
+  location: https://github.com/blockscope/flare-timing
+  subdir: zone
+
+library
+  exposed-modules:
+      Flight.Zone
+      Flight.Zone.Path
+      Flight.Zone.Raw
+      Flight.Zone.Cylinder
+  other-modules:
+      Flight.Zone.Bearing
+      Flight.Zone.Convert
+      Flight.Zone.Cylinder.Edge
+      Flight.Zone.Cylinder.Sample
+      Flight.Zone.Incline
+      Flight.Zone.Radius
+      Flight.Zone.Raw.Zone
+      Flight.Zone.Zone
+      Paths_flight_zone
+  hs-source-dirs:
+      library
+  default-extensions: DataKinds DeriveFunctor DeriveGeneric DeriveAnyClass DerivingStrategies DisambiguateRecordFields FlexibleContexts FlexibleInstances GeneralizedNewtypeDeriving GADTs LambdaCase MultiParamTypeClasses MultiWayIf NamedFieldPuns OverloadedStrings PackageImports ParallelListComp PartialTypeSignatures PatternSynonyms QuasiQuotes RankNTypes RecordWildCards ScopedTypeVariables StandaloneDeriving TemplateHaskell TypeApplications TypeFamilies TypeOperators TypeSynonymInstances TupleSections UndecidableInstances
+  ghc-options: -Wall -fplugin Data.UnitsOfMeasure.Plugin
+  build-depends:
+      aeson
+    , base >=4.9.1.0
+    , detour-via-sci
+    , detour-via-uom
+    , flight-latlng
+    , flight-units
+    , newtype
+    , scientific
+    , siggy-chardust
+    , uom-plugin
+  default-language: Haskell2010
