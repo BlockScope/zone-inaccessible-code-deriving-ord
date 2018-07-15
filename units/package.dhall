@@ -34,6 +34,4 @@ in    defs
               , "Flight.Units.DegMinSec"
               ]
           }
-      , tests =
-          ./default-tests.dhall 
       }

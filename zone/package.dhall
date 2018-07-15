@@ -36,6 +36,4 @@ in    defs
               , "Flight.Zone.Cylinder"
               ]
           }
-      , tests =
-          ./default-tests.dhall 
       }

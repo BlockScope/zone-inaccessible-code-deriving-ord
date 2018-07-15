@@ -47,6 +47,4 @@ in    deps
               , "Flight.Distance"
               ]
           }
-      , tests =
-          ./default-tests.dhall 
       }
