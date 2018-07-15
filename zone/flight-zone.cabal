@@ -2,7 +2,7 @@
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: b98efe78d3e1a223ea6847cc59af58fad0a179ed329cf385364621a8bf430271
+-- hash: 9d50784385d8e357031f7e7386a529b9fed6ac6e6186da432c77c3f1b398452e
 
 name:           flight-zone
 version:        0.1.0
@@ -21,9 +21,7 @@ build-type:     Simple
 cabal-version:  >= 1.10
 
 extra-source-files:
-    changelog.md
     package.dhall
-    README.md
 
 source-repository head
   type: git
