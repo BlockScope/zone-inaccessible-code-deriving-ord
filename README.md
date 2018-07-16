@@ -23,8 +23,8 @@ Reproduction of the reported error;
         To see the code I am typechecking, use -ddump-deriv
 ```
 
-The cabal file is ready to go but if you want to tweak it using any of the
-`*.dhall` files then install the dhall tooling with;
+The `*.cabal` file is ready to go but if you want to tweak any of the `*.dhall`
+files from which it is generated then install the dhall tooling with;
 
 ```
 > stack install dhall hpack-dhall
