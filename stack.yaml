@@ -1,5 +1,4 @@
-resolver: lts-11.17
-tested-with: GHC == 8.2.2
+resolver: nightly-2018-07-14
 flags: {}
 packages:
 - zone
