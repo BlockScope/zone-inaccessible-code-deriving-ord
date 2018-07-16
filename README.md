@@ -12,6 +12,26 @@ Reproduction of the reported error;
           Point :: forall a. (Eq a, Ord a) => Zone CourseLine a,
         in a case alternative
     • In the pattern: Point {}
+      In a case alternative: Point {} -> GT
+      In the expression:
+        case b of
+          Point {} -> GT
+          Vector -> EQ
+          _ -> LT
+      When typechecking the code for ‘compare’
+        in a derived instance for ‘Ord (Zone k a)’:
+        To see the code I am typechecking, use -ddump-deriv
+   |
+25 | deriving instance (Eq a, Ord a) => Ord (Zone k a)
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+/.../zone/library/Flight/Zone.hs:25:1: error:
+    • Couldn't match type ‘OpenDistance’ with ‘CourseLine’
+      Inaccessible code in
+        a pattern with constructor:
+          Point :: forall a. (Eq a, Ord a) => Zone CourseLine a,
+        in a case alternative
+    • In the pattern: Point {}
       In a case alternative: Point {} -> False
       In the expression:
         case b of
