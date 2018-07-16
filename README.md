@@ -22,3 +22,17 @@ Reproduction of the reported error;
         in a derived instance for ‘Ord (Zone k a)’:
         To see the code I am typechecking, use -ddump-deriv
 ```
+
+The cabal file is ready to go but if you want to tweak it using any of the
+`*.dhall` files then install the dhall tooling with;
+
+```
+> stack install dhall hpack-dhall
+...
+Copied executables to /.../__shake-build:
+- dhall
+- dhall-format
+- dhall-hash
+- dhall-repl
+- hpack-dhall
+```
