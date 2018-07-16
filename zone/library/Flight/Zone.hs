@@ -4,18 +4,8 @@ newtype Bearing a = Bearing a deriving (Eq, Ord, Show)
 newtype Radius a = Radius a deriving (Eq, Ord, Show)
 
 data EndOfSpeedSection
-    deriving (AnyZone, ZoneMaybeCylindrical, EssAllowedZone, GoalAllowedZone)
-
 data CourseLine
-    deriving (AnyZone, ZoneMaybeCylindrical)
-
 data OpenDistance
-    deriving AnyZone
-
-class AnyZone a where
-class ZoneMaybeCylindrical a where
-class EssAllowedZone a where
-class GoalAllowedZone a where
 
 -- TODO: Remove standalone deriving Eq & Ord for empty data after GHC 8.4.1
 -- SEE: https://ghc.haskell.org/trac/ghc/ticket/7401
