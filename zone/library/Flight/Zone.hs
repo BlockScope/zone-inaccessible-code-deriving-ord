@@ -1,11 +1,11 @@
 module Flight.Zone where
 
-newtype Bearing a = Bearing a deriving (Eq, Ord, Show)
-newtype Radius a = Radius a deriving (Eq, Ord, Show)
+newtype Bearing a = Bearing a deriving (Eq, Ord)
+newtype Radius a = Radius a deriving (Eq, Ord)
 
-data EndOfSpeedSection
 data CourseLine
 data OpenDistance
+data EndOfSpeedSection
 
 -- TODO: Remove standalone deriving Eq & Ord for empty data after GHC 8.4.1
 -- SEE: https://ghc.haskell.org/trac/ghc/ticket/7401
@@ -24,4 +24,3 @@ data Zone k a where
 
 deriving instance Eq (Zone k a)
 deriving instance Ord (Zone k a)
-deriving instance (Show (Bearing a), Show (Radius a)) => Show (Zone k a)
