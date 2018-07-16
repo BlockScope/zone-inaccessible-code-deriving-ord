@@ -36,3 +36,11 @@ Copied executables to /.../__shake-build:
 - dhall-repl
 - hpack-dhall
 ```
+
+To generate the `*.cabal` file;
+
+```
+> stack exec hpack-dhall -- zone
+...
+zone/flight-zone.cabal is up-to-date
+```
