@@ -19,13 +19,7 @@ import Flight.LatLng.Raw (RawLat(..), RawLng(..))
 class HasArea a where
     hasArea :: a -> Bool
 
-data Goal
-    deriving (AnyZone, ZoneMaybeCylindrical, EssAllowedZone, GoalAllowedZone)
-
 data EndOfSpeedSection
-    deriving (AnyZone, ZoneMaybeCylindrical, EssAllowedZone, GoalAllowedZone)
-
-data Turnpoint
     deriving (AnyZone, ZoneMaybeCylindrical, EssAllowedZone, GoalAllowedZone)
 
 data CourseLine
@@ -41,15 +35,11 @@ class GoalAllowedZone a where
 
 -- TODO: Remove standalone deriving Eq & Ord for empty data after GHC 8.4.1
 -- SEE: https://ghc.haskell.org/trac/ghc/ticket/7401
-deriving instance Eq Goal
 deriving instance Eq EndOfSpeedSection
-deriving instance Eq Turnpoint
 deriving instance Eq CourseLine
 deriving instance Eq OpenDistance
 
-deriving instance Ord Goal
 deriving instance Ord EndOfSpeedSection
-deriving instance Ord Turnpoint
 deriving instance Ord CourseLine
 deriving instance Ord OpenDistance
 
