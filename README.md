@@ -1,4 +1,4 @@
-# `zone-inaccessible-code-deriving-ord`
+# Inaccessible code in a pattern with constructor
 
 Reproduction of the reported error;
 
