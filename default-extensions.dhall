@@ -1,7 +1,2 @@
-{ default-extensions =
-    [ "DeriveAnyClass"
-    , "FlexibleContexts"
-    , "GADTs"
-    , "StandaloneDeriving"
-    ]
+{ default-extensions = [] : List Text
 }

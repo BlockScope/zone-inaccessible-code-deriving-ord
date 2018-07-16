@@ -2,7 +2,7 @@
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 8a7463ba34fd9e22e3f4ef565a394d0d450feb871495900765855edf9cc66251
+-- hash: 88193bf37299f5956eec0471dd1396de3157c910bda1260364b6d740eb5c82da
 
 name:           flight-zone
 version:        0.1.0
@@ -34,7 +34,6 @@ library
       Paths_flight_zone
   hs-source-dirs:
       library
-  default-extensions: DeriveAnyClass FlexibleContexts GADTs StandaloneDeriving
   ghc-options: -Wall
   build-depends:
       base >=4.9.1.0

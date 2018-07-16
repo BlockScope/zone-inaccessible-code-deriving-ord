@@ -1,3 +1,8 @@
+{-# LANGUAGE DeriveAnyClass #-}
+{-# LANGUAGE FlexibleContexts #-}
+{-# LANGUAGE GADTs #-}
+{-# LANGUAGE StandaloneDeriving #-}
+
 module Flight.Zone where
 
 newtype Radius a = Radius a deriving (Eq, Ord)
