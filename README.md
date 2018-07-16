@@ -3,6 +3,8 @@
 Reproduction of the reported error;
 
 ```
+> stack build flight-zone --ghc-options=-ddump-deriv
+...
 /.../zone/library/Flight/Zone.hs:25:1: error:
     • Couldn't match type ‘OpenDistance’ with ‘CourseLine’
       Inaccessible code in
