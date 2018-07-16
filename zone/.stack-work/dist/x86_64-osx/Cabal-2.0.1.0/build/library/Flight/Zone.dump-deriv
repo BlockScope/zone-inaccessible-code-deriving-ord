@@ -1,0 +1,293 @@
+
+==================== Derived instances ====================
+2018-07-16 10:52:56.20827 UTC
+
+Derived class instances:
+  instance (GHC.Classes.Eq a, GHC.Classes.Ord a) =>
+           GHC.Classes.Ord (Flight.Zone.Zone k a) where
+    GHC.Classes.compare a_a2c3 b_a2c4
+      = case a_a2c3 of
+          Flight.Zone.Point
+            -> case b_a2c4 of
+                 Flight.Zone.Point -> GHC.Types.EQ
+                 _ -> GHC.Types.LT
+          Flight.Zone.Vector
+            -> case b_a2c4 of
+                 Flight.Zone.Point {} -> GHC.Types.GT
+                 Flight.Zone.Vector -> GHC.Types.EQ
+                 _ -> GHC.Types.LT
+          Flight.Zone.Conical a1_a2c5
+            -> case b_a2c4 of
+                 Flight.Zone.Conical b1_a2c6
+                   -> (a1_a2c5 `GHC.Classes.compare` b1_a2c6)
+                 _ -> GHC.Types.GT
+    (GHC.Classes.<) a_a2c7 b_a2c8
+      = case a_a2c7 of
+          Flight.Zone.Point
+            -> case b_a2c8 of
+                 Flight.Zone.Point -> GHC.Types.False
+                 _ -> GHC.Types.True
+          Flight.Zone.Vector
+            -> case b_a2c8 of
+                 Flight.Zone.Point {} -> GHC.Types.False
+                 Flight.Zone.Vector -> GHC.Types.False
+                 _ -> GHC.Types.True
+          Flight.Zone.Conical a1_a2c9
+            -> case b_a2c8 of
+                 Flight.Zone.Conical b1_a2ca -> (a1_a2c9 GHC.Classes.< b1_a2ca)
+                 _ -> GHC.Types.False
+    (GHC.Classes.<=) a_a2cb b_a2cc
+      = GHC.Classes.not ((GHC.Classes.<) b_a2cc a_a2cb)
+    (GHC.Classes.>) a_a2cd b_a2ce = (GHC.Classes.<) b_a2ce a_a2cd
+    (GHC.Classes.>=) a_a2cf b_a2cg
+      = GHC.Classes.not ((GHC.Classes.<) a_a2cf b_a2cg)
+  
+  instance GHC.Classes.Eq a =>
+           GHC.Classes.Eq (Flight.Zone.Zone k a) where
+    (GHC.Classes.==) (Flight.Zone.Point) (Flight.Zone.Point)
+      = GHC.Types.True
+    (GHC.Classes.==) (Flight.Zone.Vector) (Flight.Zone.Vector)
+      = GHC.Types.True
+    (GHC.Classes.==)
+      (Flight.Zone.Conical a1_a2ch)
+      (Flight.Zone.Conical b1_a2ci)
+      = ((a1_a2ch GHC.Classes.== b1_a2ci))
+    (GHC.Classes.==) _ _ = GHC.Types.False
+    (GHC.Classes./=) a_a2cj b_a2ck
+      = GHC.Classes.not ((GHC.Classes.==) a_a2cj b_a2ck)
+  
+  instance GHC.Classes.Ord Flight.Zone.EndOfSpeedSection where
+    GHC.Classes.compare = GHC.Err.error "Void compare"
+  
+  instance GHC.Classes.Ord Flight.Zone.OpenDistance where
+    GHC.Classes.compare = GHC.Err.error "Void compare"
+  
+  instance GHC.Classes.Ord Flight.Zone.CourseLine where
+    GHC.Classes.compare = GHC.Err.error "Void compare"
+  
+  instance GHC.Classes.Eq Flight.Zone.EndOfSpeedSection where
+    (GHC.Classes.==) = GHC.Err.error "Void =="
+    (GHC.Classes./=) a_a2cl b_a2cm
+      = GHC.Classes.not ((GHC.Classes.==) a_a2cl b_a2cm)
+  
+  instance GHC.Classes.Eq Flight.Zone.OpenDistance where
+    (GHC.Classes.==) = GHC.Err.error "Void =="
+    (GHC.Classes./=) a_a2cn b_a2co
+      = GHC.Classes.not ((GHC.Classes.==) a_a2cn b_a2co)
+  
+  instance GHC.Classes.Eq Flight.Zone.CourseLine where
+    (GHC.Classes.==) = GHC.Err.error "Void =="
+    (GHC.Classes./=) a_a2cp b_a2cq
+      = GHC.Classes.not ((GHC.Classes.==) a_a2cp b_a2cq)
+  
+  instance GHC.Classes.Eq a =>
+           GHC.Classes.Eq (Flight.Zone.Radius a) where
+    (GHC.Classes.==)
+      = GHC.Prim.coerce
+          @(a_a1qt -> a_a1qt -> GHC.Types.Bool)
+          @(Flight.Zone.Radius a_a1qt
+            -> Flight.Zone.Radius a_a1qt -> GHC.Types.Bool)
+          (GHC.Classes.==)
+    (GHC.Classes./=)
+      = GHC.Prim.coerce
+          @(a_a1qt -> a_a1qt -> GHC.Types.Bool)
+          @(Flight.Zone.Radius a_a1qt
+            -> Flight.Zone.Radius a_a1qt -> GHC.Types.Bool)
+          (GHC.Classes./=)
+  
+  instance GHC.Classes.Ord a =>
+           GHC.Classes.Ord (Flight.Zone.Radius a) where
+    GHC.Classes.compare
+      = GHC.Prim.coerce
+          @(a_a1qt -> a_a1qt -> GHC.Types.Ordering)
+          @(Flight.Zone.Radius a_a1qt
+            -> Flight.Zone.Radius a_a1qt -> GHC.Types.Ordering)
+          GHC.Classes.compare
+    (GHC.Classes.<)
+      = GHC.Prim.coerce
+          @(a_a1qt -> a_a1qt -> GHC.Types.Bool)
+          @(Flight.Zone.Radius a_a1qt
+            -> Flight.Zone.Radius a_a1qt -> GHC.Types.Bool)
+          (GHC.Classes.<)
+    (GHC.Classes.<=)
+      = GHC.Prim.coerce
+          @(a_a1qt -> a_a1qt -> GHC.Types.Bool)
+          @(Flight.Zone.Radius a_a1qt
+            -> Flight.Zone.Radius a_a1qt -> GHC.Types.Bool)
+          (GHC.Classes.<=)
+    (GHC.Classes.>)
+      = GHC.Prim.coerce
+          @(a_a1qt -> a_a1qt -> GHC.Types.Bool)
+          @(Flight.Zone.Radius a_a1qt
+            -> Flight.Zone.Radius a_a1qt -> GHC.Types.Bool)
+          (GHC.Classes.>)
+    (GHC.Classes.>=)
+      = GHC.Prim.coerce
+          @(a_a1qt -> a_a1qt -> GHC.Types.Bool)
+          @(Flight.Zone.Radius a_a1qt
+            -> Flight.Zone.Radius a_a1qt -> GHC.Types.Bool)
+          (GHC.Classes.>=)
+    GHC.Classes.max
+      = GHC.Prim.coerce
+          @(a_a1qt -> a_a1qt -> a_a1qt)
+          @(Flight.Zone.Radius a_a1qt
+            -> Flight.Zone.Radius a_a1qt -> Flight.Zone.Radius a_a1qt)
+          GHC.Classes.max
+    GHC.Classes.min
+      = GHC.Prim.coerce
+          @(a_a1qt -> a_a1qt -> a_a1qt)
+          @(Flight.Zone.Radius a_a1qt
+            -> Flight.Zone.Radius a_a1qt -> Flight.Zone.Radius a_a1qt)
+          GHC.Classes.min
+  
+  Flight.Zone.$con2tag_4A8W26HPj4J74KueGKXrph ::
+    forall k a. Flight.Zone.Zone k a -> GHC.Prim.Int#
+  Flight.Zone.$con2tag_4A8W26HPj4J74KueGKXrph Flight.Zone.Point = 0#
+  Flight.Zone.$con2tag_4A8W26HPj4J74KueGKXrph Flight.Zone.Vector = 1#
+  Flight.Zone.$con2tag_4A8W26HPj4J74KueGKXrph Flight.Zone.Conical _
+    = 2#
+
+Derived type family instances:
+
+
+==================== Filling in method body ====================
+2018-07-16 10:52:56.211041 UTC
+
+GHC.Classes.Ord [Flight.Zone.Zone k_a2cS[ssk:2] a_a2cR[ssk:2]]
+  GHC.Classes.max = GHC.Classes.$dmmax
+                      @Flight.Zone.Zone k_a2cS[ssk:2] a_a2cR[ssk:2]
+
+
+==================== Filling in method body ====================
+2018-07-16 10:52:56.211365 UTC
+
+GHC.Classes.Ord [Flight.Zone.Zone k_a2cS[ssk:2] a_a2cR[ssk:2]]
+  GHC.Classes.min = GHC.Classes.$dmmin
+                      @Flight.Zone.Zone k_a2cS[ssk:2] a_a2cR[ssk:2]
+
+
+==================== Filling in method body ====================
+2018-07-16 10:52:56.212264 UTC
+
+GHC.Classes.Ord [Flight.Zone.EndOfSpeedSection]
+  GHC.Classes.< = GHC.Classes.$dm< @Flight.Zone.EndOfSpeedSection
+
+
+==================== Filling in method body ====================
+2018-07-16 10:52:56.212501 UTC
+
+GHC.Classes.Ord [Flight.Zone.EndOfSpeedSection]
+  GHC.Classes.<= = GHC.Classes.$dm<= @Flight.Zone.EndOfSpeedSection
+
+
+==================== Filling in method body ====================
+2018-07-16 10:52:56.212735 UTC
+
+GHC.Classes.Ord [Flight.Zone.EndOfSpeedSection]
+  GHC.Classes.> = GHC.Classes.$dm> @Flight.Zone.EndOfSpeedSection
+
+
+==================== Filling in method body ====================
+2018-07-16 10:52:56.21296 UTC
+
+GHC.Classes.Ord [Flight.Zone.EndOfSpeedSection]
+  GHC.Classes.>= = GHC.Classes.$dm>= @Flight.Zone.EndOfSpeedSection
+
+
+==================== Filling in method body ====================
+2018-07-16 10:52:56.213169 UTC
+
+GHC.Classes.Ord [Flight.Zone.EndOfSpeedSection]
+  GHC.Classes.max = GHC.Classes.$dmmax @Flight.Zone.EndOfSpeedSection
+
+
+==================== Filling in method body ====================
+2018-07-16 10:52:56.213378 UTC
+
+GHC.Classes.Ord [Flight.Zone.EndOfSpeedSection]
+  GHC.Classes.min = GHC.Classes.$dmmin @Flight.Zone.EndOfSpeedSection
+
+
+==================== Filling in method body ====================
+2018-07-16 10:52:56.213616 UTC
+
+GHC.Classes.Ord [Flight.Zone.OpenDistance]
+  GHC.Classes.< = GHC.Classes.$dm< @Flight.Zone.OpenDistance
+
+
+==================== Filling in method body ====================
+2018-07-16 10:52:56.213825 UTC
+
+GHC.Classes.Ord [Flight.Zone.OpenDistance]
+  GHC.Classes.<= = GHC.Classes.$dm<= @Flight.Zone.OpenDistance
+
+
+==================== Filling in method body ====================
+2018-07-16 10:52:56.214097 UTC
+
+GHC.Classes.Ord [Flight.Zone.OpenDistance]
+  GHC.Classes.> = GHC.Classes.$dm> @Flight.Zone.OpenDistance
+
+
+==================== Filling in method body ====================
+2018-07-16 10:52:56.214354 UTC
+
+GHC.Classes.Ord [Flight.Zone.OpenDistance]
+  GHC.Classes.>= = GHC.Classes.$dm>= @Flight.Zone.OpenDistance
+
+
+==================== Filling in method body ====================
+2018-07-16 10:52:56.214614 UTC
+
+GHC.Classes.Ord [Flight.Zone.OpenDistance]
+  GHC.Classes.max = GHC.Classes.$dmmax @Flight.Zone.OpenDistance
+
+
+==================== Filling in method body ====================
+2018-07-16 10:52:56.214813 UTC
+
+GHC.Classes.Ord [Flight.Zone.OpenDistance]
+  GHC.Classes.min = GHC.Classes.$dmmin @Flight.Zone.OpenDistance
+
+
+==================== Filling in method body ====================
+2018-07-16 10:52:56.215043 UTC
+
+GHC.Classes.Ord [Flight.Zone.CourseLine]
+  GHC.Classes.< = GHC.Classes.$dm< @Flight.Zone.CourseLine
+
+
+==================== Filling in method body ====================
+2018-07-16 10:52:56.21524 UTC
+
+GHC.Classes.Ord [Flight.Zone.CourseLine]
+  GHC.Classes.<= = GHC.Classes.$dm<= @Flight.Zone.CourseLine
+
+
+==================== Filling in method body ====================
+2018-07-16 10:52:56.215433 UTC
+
+GHC.Classes.Ord [Flight.Zone.CourseLine]
+  GHC.Classes.> = GHC.Classes.$dm> @Flight.Zone.CourseLine
+
+
+==================== Filling in method body ====================
+2018-07-16 10:52:56.215625 UTC
+
+GHC.Classes.Ord [Flight.Zone.CourseLine]
+  GHC.Classes.>= = GHC.Classes.$dm>= @Flight.Zone.CourseLine
+
+
+==================== Filling in method body ====================
+2018-07-16 10:52:56.215818 UTC
+
+GHC.Classes.Ord [Flight.Zone.CourseLine]
+  GHC.Classes.max = GHC.Classes.$dmmax @Flight.Zone.CourseLine
+
+
+==================== Filling in method body ====================
+2018-07-16 10:52:56.21601 UTC
+
+GHC.Classes.Ord [Flight.Zone.CourseLine]
+  GHC.Classes.min = GHC.Classes.$dmmin @Flight.Zone.CourseLine
+
