@@ -41,6 +41,9 @@ Reproduction of the reported error;
       When typechecking the code for ‘<’
         in a derived instance for ‘Ord (Zone k a)’:
         To see the code I am typechecking, use -ddump-deriv
+   |
+25 | deriving instance (Eq a, Ord a) => Ord (Zone k a)
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 ```
 
 The `*.cabal` file is ready to go but if you want to tweak any of the `*.dhall`
