@@ -2,7 +2,7 @@
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 62e6dcebdb8a738e7f0d0f64fd820a0171f6f396a6bb88d4edeb8af50440d0f9
+-- hash: 7ee371cf6a5c779f3267a8a4eed839dc204c08f311de67655061a512b470cd49
 
 name:           flight-zone
 version:        0.1.0
@@ -35,7 +35,7 @@ library
       Paths_flight_zone
   hs-source-dirs:
       library
-  default-extensions: DataKinds DeriveFunctor DeriveGeneric DeriveAnyClass DerivingStrategies DisambiguateRecordFields FlexibleContexts FlexibleInstances GeneralizedNewtypeDeriving GADTs LambdaCase MultiParamTypeClasses MultiWayIf NamedFieldPuns OverloadedStrings PackageImports ParallelListComp PartialTypeSignatures PatternSynonyms QuasiQuotes RankNTypes RecordWildCards ScopedTypeVariables StandaloneDeriving TemplateHaskell TypeApplications TypeFamilies TypeOperators TypeSynonymInstances TupleSections UndecidableInstances
+  default-extensions: DeriveAnyClass FlexibleContexts GADTs StandaloneDeriving
   ghc-options: -Wall
   build-depends:
       base >=4.9.1.0
