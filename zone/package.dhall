@@ -13,17 +13,8 @@ in    defs
       , github =
           "blockscope/flare-timing/zone"
       , ghc-options =
-          [ "-Wall", "-fplugin Data.UnitsOfMeasure.Plugin" ]
-      , dependencies =
-            defs.dependencies
-          # [ "uom-plugin"
-            , "aeson"
-            , "scientific"
-            , "newtype"
-            , "siggy-chardust"
-            , "detour-via-sci"
-            , "detour-via-uom"
-            ]
+          [ "-Wall" ]
+      , dependencies = defs.dependencies
       , library =
           { source-dirs =
               "library"

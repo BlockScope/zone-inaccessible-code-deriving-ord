@@ -2,7 +2,7 @@
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 067cf782a1be511c6fb817ce9f94ef746dbf29744255238b21512525184f4bad
+-- hash: 62e6dcebdb8a738e7f0d0f64fd820a0171f6f396a6bb88d4edeb8af50440d0f9
 
 name:           flight-zone
 version:        0.1.0
@@ -36,14 +36,7 @@ library
   hs-source-dirs:
       library
   default-extensions: DataKinds DeriveFunctor DeriveGeneric DeriveAnyClass DerivingStrategies DisambiguateRecordFields FlexibleContexts FlexibleInstances GeneralizedNewtypeDeriving GADTs LambdaCase MultiParamTypeClasses MultiWayIf NamedFieldPuns OverloadedStrings PackageImports ParallelListComp PartialTypeSignatures PatternSynonyms QuasiQuotes RankNTypes RecordWildCards ScopedTypeVariables StandaloneDeriving TemplateHaskell TypeApplications TypeFamilies TypeOperators TypeSynonymInstances TupleSections UndecidableInstances
-  ghc-options: -Wall -fplugin Data.UnitsOfMeasure.Plugin
+  ghc-options: -Wall
   build-depends:
-      aeson
-    , base >=4.9.1.0
-    , detour-via-sci
-    , detour-via-uom
-    , newtype
-    , scientific
-    , siggy-chardust
-    , uom-plugin
+      base >=4.9.1.0
   default-language: Haskell2010
