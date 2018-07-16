@@ -1,63 +1,37 @@
-module Flight.Zone
-    ( HasArea(..)
-    , QRadius
-    , Radius(..)
-    , QIncline
-    , Incline(..)
-    , QBearing
-    , Bearing(..)
-    , Zone(..)
-    , Deadline(..)
-    , TimeOfDay(..)
-    , Interval(..)
-    , StartGates(..)
-    , Task(..)
-    , showZoneDMS
-    , center
-    , radius
-    , fromRationalRadius
-    , fromRationalZone
-    , toRationalRadius
-    , toRationalZone
-    , realToFracRadius
-    , realToFracZone
-    , fromRationalLatLng
-    , toRationalLatLng
-    , realToFracLatLng
+module Flight.Zone where
 
-    , RawZoneToZone
-    , rawZonesToZones
-    ) where
+newtype Bearing a = Bearing a deriving (Eq, Ord, Show)
+newtype Radius a = Radius a deriving (Eq, Ord, Show)
 
-import Flight.Zone.Radius (Radius(..), QRadius)
-import Flight.Zone.Bearing (Bearing(..), QBearing)
-import Flight.Zone.Incline (Incline(..), QIncline)
-import Flight.Zone.Zone
-    ( HasArea(..), Zone(..), RawZoneToZone
-    , center, radius, showZoneDMS, rawZonesToZones
-    )
-import Flight.Zone.Convert
-    ( fromRationalLatLng, toRationalLatLng
-    , fromRationalRadius, toRationalRadius
-    , fromRationalZone, toRationalZone
-    , realToFracLatLng, realToFracZone, realToFracRadius
-    )
+data EndOfSpeedSection
+    deriving (AnyZone, ZoneMaybeCylindrical, EssAllowedZone, GoalAllowedZone)
 
-newtype Deadline = Deadline Integer deriving (Eq, Ord, Show)
-newtype TimeOfDay = TimeOfDay Rational deriving (Eq, Ord, Show)
-newtype Interval = Interval Rational deriving (Eq, Ord, Show)
+data CourseLine
+    deriving (AnyZone, ZoneMaybeCylindrical)
 
-data StartGates
-    = StartGates
-        { open :: TimeOfDay
-        , intervals :: [Interval]
-        } deriving Show
+data OpenDistance
+    deriving AnyZone
 
-data Task a
-    = Task
-        { zones :: [Zone a]
-        , startZone :: Int
-        , endZone :: Int
-        , startGates :: StartGates
-        , deadline :: Maybe Deadline
-        }
+class AnyZone a where
+class ZoneMaybeCylindrical a where
+class EssAllowedZone a where
+class GoalAllowedZone a where
+
+-- TODO: Remove standalone deriving Eq & Ord for empty data after GHC 8.4.1
+-- SEE: https://ghc.haskell.org/trac/ghc/ticket/7401
+deriving instance Eq EndOfSpeedSection
+deriving instance Eq CourseLine
+deriving instance Eq OpenDistance
+
+deriving instance Ord EndOfSpeedSection
+deriving instance Ord CourseLine
+deriving instance Ord OpenDistance
+
+data Zone k a where
+    Point :: (Eq a, Ord a) => Zone CourseLine a
+    Vector :: (Eq a, Ord a) => Bearing a -> Zone OpenDistance a
+    Conical :: (Eq a, Ord a) => Radius a -> Zone EndOfSpeedSection a
+
+deriving instance Eq (Zone k a)
+deriving instance Ord (Zone k a)
+deriving instance (Show (Bearing a), Show (Radius a)) => Show (Zone k a)
