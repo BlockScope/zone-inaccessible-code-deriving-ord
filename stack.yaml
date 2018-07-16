@@ -1,7 +1,11 @@
-resolver: nightly-2018-07-14
+resolver: lts-11.17
 flags: {}
 packages:
 - zone
+- location:
+    git: https://github.com/brunjlar/stack2cabal
+    commit: a8a4cdcacd697cee648af93856735f15de5987a6
+  extra-dep: true
 extra-deps:
 - dhall-1.12.0
 - hpack-dhall-0.1.0
