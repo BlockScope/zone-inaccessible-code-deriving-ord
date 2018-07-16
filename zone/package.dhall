@@ -11,14 +11,11 @@ in    defs
       , category =
           "Flight"
       , github =
-          "blockscope/flare-timing/zone"
+          "blockscope/zone-inaccessible-code-deriving-ord"
       , ghc-options =
           [ "-Wall" ]
-      , dependencies = defs.dependencies
+      , dependencies =
+          defs.dependencies
       , library =
-          { source-dirs =
-              "library"
-          , exposed-modules =
-              [ "Flight.Zone" ]
-          }
+          { source-dirs = "library", exposed-modules = [ "Flight.Zone" ] }
       }
