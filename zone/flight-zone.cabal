@@ -2,7 +2,7 @@
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 714f40b2d7f895628514b5a08a8de983a683930f1d39a848ad4d210f59d4d615
+-- hash: 067cf782a1be511c6fb817ce9f94ef746dbf29744255238b21512525184f4bad
 
 name:           flight-zone
 version:        0.1.0
@@ -31,7 +31,6 @@ source-repository head
 library
   exposed-modules:
       Flight.Zone
-      Flight.Zone.Raw
   other-modules:
       Paths_flight_zone
   hs-source-dirs:
@@ -43,8 +42,6 @@ library
     , base >=4.9.1.0
     , detour-via-sci
     , detour-via-uom
-    , flight-latlng
-    , flight-units
     , newtype
     , scientific
     , siggy-chardust

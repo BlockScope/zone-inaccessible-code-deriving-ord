@@ -23,15 +23,11 @@ in    defs
             , "siggy-chardust"
             , "detour-via-sci"
             , "detour-via-uom"
-            , "flight-units"
-            , "flight-latlng"
             ]
       , library =
           { source-dirs =
               "library"
           , exposed-modules =
-              [ "Flight.Zone"
-              , "Flight.Zone.Raw"
-              ]
+              [ "Flight.Zone" ]
           }
       }
