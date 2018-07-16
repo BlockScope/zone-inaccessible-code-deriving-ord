@@ -53,20 +53,15 @@ data Zone k a where
 
     Vector
         :: (Eq a, Ord a)
-        => QBearing a [u| rad |]
+        => Bearing a
         -> Zone OpenDistance a
 
     Conical
         :: (Eq a, Ord a)
-        => QRadius a [u| m |]
+        => Radius a
         -> Zone EndOfSpeedSection a
 
 deriving instance Eq (Zone k a)
 deriving instance Ord (Zone k a)
-deriving instance
-    ( Show (QIncline a [u| rad |])
-    , Show (QBearing a [u| rad |])
-    , Show (QRadius a [u| m |])
-    )
-    => Show (Zone k a)
+deriving instance (Show (Bearing a), Show (Radius a)) => Show (Zone k a)
 
